@@ -1,0 +1,14 @@
+<body>
+<form>
+    {{ form.as_ul }}
+    <input type="submit" value="Search" />
+</form>
+{% for location in locations %}
+<li>
+<a href="{{ location.get_absolute_url }}">{{ location.name }}</a> {% if location.distance %}({{ location.distance|floatformat:1 }} mi){% endif %}
+{% for category in location.category.all %}
+{{ category.id }}, {{ category.name }}
+{% endfor %}
+</li>
+{% endfor %}
+</body>

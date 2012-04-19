@@ -1,0 +1,18 @@
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+  <Document>
+      <name>Where can you buy Port City Brewing's beer?</name>
+      <atom:author>
+      <atom:name>Port City Brewing Company</atom:name>
+    </atom:author>
+    <atom:link href="http://www.portcitybrewing.com" />
+    {% for location in locations %}
+    <Placemark>
+        <name>{{ location.name }}</name>
+        <description>{{ location.name }} is a fine place to buy Port City brews!</description>
+        <Point>
+            <coordinates>{{ location.longitude }},{{ location.latitude }}</coordinates>
+        </Point>
+    </Placemark>
+    {% endfor %}
+  </Document>
+</kml>

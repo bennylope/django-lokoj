@@ -1,0 +1,5 @@
+<h1>{{ location.name }}</h1>
+
+<p>{{ location.street_address }}</p>
+<p>{{ location.city }}, {{ location.state }} {{ location.postal_code }}</p>
+<p>{% if location.has_geolocation %}Geolocation: {{ location.latitude|floatformat:3 }}, {{ location.longitude|floatformat:3 }}{% else %}No geolocation{% endif %}</p>
